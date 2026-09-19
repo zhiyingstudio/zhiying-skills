@@ -1,7 +1,35 @@
+<div align="center">
+
 # 智影技能库 · Zhiying Skills
 
-> 宫帅（AI智库 · 智影科技）开源的 WorkBuddy 技能与专家包合集。
-> 每一个技能都来自真实项目的实战沉淀，不是玩具 Demo。
+**宫帅（AI智库 · 智影科技）开源的 Agent 技能与专家包合集**
+每一个技能都来自真实项目的实战沉淀，不是玩具 Demo。
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Skills](https://img.shields.io/badge/免费技能-19-brightgreen)](#-免费技能19-个)
+[![Experts](https://img.shields.io/badge/专家包-5-orange)](#-专家包5-个)
+[![Standard](https://img.shields.io/badge/标准-Agent%20Skills-blueviolet)](https://agentskills.io)
+
+</div>
+
+---
+
+## 🌐 兼容性：其他 Agent 工具也能用
+
+本仓库技能采用 **[Agent Skills](https://agentskills.io) 开放标准**（SKILL.md：YAML frontmatter + Markdown 指令）——该标准由 Anthropic 发起、现由 Linux 基金会托管，**不是 WorkBuddy 私有格式**。同一目录，复制到对应位置即可在各家工具中使用：
+
+| 工具 | 安装位置 |
+| --- | --- |
+| **WorkBuddy** | 推荐市场一键安装，或 `~/.workbuddy/skills/` |
+| **Claude Code** | 项目级 `.claude/skills/` · 用户级 `~/.claude/skills/` |
+| **GitHub Copilot / VS Code** | `.github/skills/`（兼容 `.claude/skills/`） |
+| **OpenAI Codex CLI** | `.agents/skills/` · 用户级 `~/.agents/skills/` |
+| **Cursor (2.4+)** | `.cursor/skills/` |
+| **Gemini CLI / Windsurf / Cline / Roo Code / Goose / Trae…** | 各自的 `skills/` 目录 |
+
+> 即使你的工具尚未原生支持该标准，SKILL.md 本质就是一份结构化 prompt 文档——直接引用或粘贴给任何 Agent 都能用。
+>
+> 专家包（experts/）为 WorkBuddy 原生格式，但 `agents/` 下的角色 prompt 是通用 Markdown，可当作 system prompt 用于任何工具。
 
 ## 📦 免费技能（19 个）
 
@@ -37,23 +65,19 @@
 | [newmedia-growth-operator](experts/newmedia-growth-operator) | 新媒体增长操盘手：逆向拆解爆款逻辑 |
 | [security-audit-team](experts/security-audit-team) | 安全审计四角色团队：后端、前端、基础设施分域审查 |
 
-## 🚀 安装方式
-
-**方式一：WorkBuddy 推荐市场（推荐）**
-
-在 WorkBuddy 内直接搜索技能名，一键安装。
-
-**方式二：手动安装**
+## 🚀 快速开始
 
 ```bash
 git clone https://github.com/zhiyingstudio/zhiying-skills.git
-# 装单个技能到用户级（所有项目可用）
-cp -R zhiying-skills/skills/zhiying-weekly-report ~/.workbuddy/skills/
-# 或装到项目级（仅当前项目）
-cp -R zhiying-skills/skills/zhiying-weekly-report 你的项目/.workbuddy/skills/
-```
 
-专家包同理，将 `experts/` 下对应目录放入 WorkBuddy 插件目录即可。
+# 例：把「周报生成」装进 Claude Code（用户级）
+cp -R zhiying-skills/skills/zhiying-weekly-report ~/.claude/skills/
+
+# 例：把「简历优化」装进 Codex CLI
+cp -R zhiying-skills/skills/zhiying-resume-optimizer ~/.agents/skills/
+
+# WorkBuddy：推荐市场搜索技能名一键安装
+```
 
 ## 💎 付费技能
 
@@ -61,6 +85,7 @@ cp -R zhiying-skills/skills/zhiying-weekly-report 你的项目/.workbuddy/skills
 
 ## 🔗 相关链接
 
+- 作者主页：[github.com/zhiyingstudio](https://github.com/zhiyingstudio)
 - AI智库官网：https://ai-zhiku.com
 
 ## 📄 License

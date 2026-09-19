@@ -1,43 +1,24 @@
-# 内容生产流水线
+# 内容生产流水线 · content-pipeline-team
 
-一个主题进去，一整套可发布内容出来。四位角色串成流水线，各司其职，不返工。
+> 四位角色把选题推进到可发布：选题挖掘、长文撰写、多平台改写、视觉包装，一次生产多端分发。
 
-## 团队分工
+`WorkBuddy 专家包` `v1.0.1` `MIT`
 
-| 角色 | 名字 | 负责 |
-|---|---|---|
-| 内容主理人 | 文知远 | 确认目标、编排四阶段、汇编发布包 |
-| 选题侦察员 | 任觅 | 挖真实需求、筛角度、设计钩子 |
-| 长文撰稿人 | 墨行 | 写正文、搭结构、提金句 |
-| 多平台改写师 | 安适 | 按平台重写：公众号 / 小红书 / 抖音 / 视频号 / B站 |
-| 视觉包装师 | 卫图 | 封面文案、配图方案、视觉一致性规范 |
+## 📥 安装
 
-## 工作流程
+| 工具 | 方式 |
+| --- | --- |
+| **WorkBuddy** | 专家市场搜索「内容生产流水线」一键启用，或把本目录放入 WorkBuddy 插件目录 |
+| **其他 Agent 工具** | 专家包是 WorkBuddy 原生格式；其中 `agents/` 下的角色 prompt 是通用 Markdown，可直接当作 system prompt 用于任何 Agent 工具 |
 
-```
-确认目标 → 选题侦察 → 长文撰写 → 多平台改写 → 视觉包装 → 汇编交付
-```
+## 👤 团队成员
 
-**关键设计**：每个阶段有明确交付物，前序不完成不进入后续。主理人只做编排，不代写任何成员产出。
+- **content-team-lead** — Content team lead - orchestrates topic mining, long-form drafting, multi-platfor
+- **longform-writer** — Long-form writer - drafts the core article with clear structure, concrete eviden
+- **platform-adapter** — Platform adapter - rewrites source content natively for WeChat, Xiaohongshu, Dou
+- **topic-scout** — Topic scout - mines real audience demand, screens angles by information gap and 
+- **visual-packager** — Visual packager - produces cover copy, illustration direction, infographic struc
 
-## 为什么用团队而不是单个专家
+---
 
-一次内容生产涉及四种截然不同的专业判断：
-
-- **选题**需要市场嗅觉（哪个角度有人看）
-- **写作**需要表达能力（怎么写得像人写的）
-- **改写**需要平台认知（各平台算法与用户预期差异）
-- **视觉**需要设计意识（封面怎么让人停下滑动）
-
-单个角色很难同时具备这四种判断力，且容易串味——写正文时就想着封面，结果两头不到位。流水线的作用是**让每个环节专注做一件事**。
-
-## 使用示例
-
-- "我有个主题，帮我一口气做成多平台可发布的内容"
-- "帮我挖一下这个主题里真正值得写的角度"
-- "把这篇文章改成小红书、抖音和公众号三个版本"
-- "给我这套内容配一套封面文案"
-
-## 适用人群
-
-自媒体运营、企业内容团队、知识付费从业者、需要稳定内容产出的个人品牌。
+**作者：宫帅（AI智库 · 智影科技）** · [智影技能库](https://github.com/zhiyingstudio/zhiying-skills) · [AI智库官网](https://ai-zhiku.com) · MIT License
