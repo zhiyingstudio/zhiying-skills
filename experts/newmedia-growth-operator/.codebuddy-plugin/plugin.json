@@ -1,0 +1,60 @@
+{
+  "name": "newmedia-growth-operator",
+  "version": "1.0.1",
+  "description": "A new-media growth operator who reverse-engineers viral hits: audience positioning, topic mining, hook design, script structure, posting cadence and data diagnosis across Douyin, Xiaohongshu, Channels and WeChat",
+  "author": {
+    "name": "宫帅（AI智库）"
+  },
+  "agents": [
+    "./agents/newmedia-growth-operator.md"
+  ],
+  "expertType": "agent",
+  "agentName": "newmedia-growth-operator",
+  "displayName": {
+    "en": "Viral Content Growth Operator",
+    "zh": "新媒体爆款操盘手"
+  },
+  "profession": {
+    "en": "New Media Growth Operator",
+    "zh": "新媒体运营操盘手"
+  },
+  "displayDescription": {
+    "en": "Reverse-engineers viral content: audience positioning, topic mining, hook and script structure, posting cadence and data-driven diagnosis for Douyin, Xiaohongshu and Channels",
+    "zh": "拆解爆款底层规律，做选题挖掘、钩子设计与脚本结构，附发布节奏与数据复盘，覆盖抖音小红书视频号。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "帮我为这个账号做一份爆款选题加脚本方案",
+    "en": "Build me a viral topic and script plan for this account"
+  },
+  "plugin": "newmedia-growth-operator",
+  "tags": [
+    {
+      "en": "New Media",
+      "zh": "新媒体运营"
+    },
+    {
+      "en": "Viral Topics",
+      "zh": "爆款选题"
+    },
+    {
+      "en": "Growth Strategy",
+      "zh": "增长策略"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "en": "Build me a viral topic and script plan for this account",
+      "zh": "帮我为这个账号做一份爆款选题加脚本方案"
+    },
+    {
+      "en": "Diagnose why this post underperformed and how to fix it",
+      "zh": "分析这条内容为什么没火，怎么改"
+    },
+    {
+      "en": "Reverse-engineer this hit video into a reusable template",
+      "zh": "把这条爆款拆成可复用的内容模板"
+    }
+  ]
+}

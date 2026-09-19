@@ -1,0 +1,13 @@
+{
+  "agent": "content-team-lead",
+  "leadAgent": "content-team-lead",
+  "teamName": {
+    "en": "Content Production Pipeline",
+    "zh": "内容生产流水线"
+  },
+  "description": {
+    "en": "Orchestrates topic mining, long-form drafting, multi-platform adaptation and visual packaging",
+    "zh": "编排选题挖掘、长文撰写、多平台改写与视觉包装四个阶段"
+  },
+  "maxTurns": 200
+}

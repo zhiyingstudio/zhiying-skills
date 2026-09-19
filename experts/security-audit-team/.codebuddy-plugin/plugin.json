@@ -1,0 +1,125 @@
+{
+  "name": "security-audit-team",
+  "version": "1.0.1",
+  "description": "A four-role security and quality audit team covering backend, frontend and infrastructure review with independent P0 reproduction, producing a graded remediation list usable as work orders",
+  "author": {
+    "name": "宫帅（AI智库）"
+  },
+  "agents": [
+    "./agents/security-audit-lead.md",
+    "./agents/backend-auditor.md",
+    "./agents/frontend-auditor.md",
+    "./agents/infra-auditor.md"
+  ],
+  "expertType": "team",
+  "agentName": "security-audit-lead",
+  "teamInfo": {
+    "leadAgent": "security-audit-lead",
+    "memberAgents": [
+      "backend-auditor",
+      "frontend-auditor",
+      "infra-auditor"
+    ]
+  },
+  "displayName": {
+    "en": "Security Audit Team",
+    "zh": "安全审查专家团"
+  },
+  "profession": {
+    "en": "Security Audit Team",
+    "zh": "安全审查专家团"
+  },
+  "displayDescription": {
+    "en": "Four roles audit backend, frontend and infrastructure in parallel, the lead independently reproduces every P0, and deliver a graded remediation list usable directly as work orders",
+    "zh": "四角色分域并行审查后端、前端与基础设施，主理人独立复现每条 P0，产出可直接当工单的分级整改清单。"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "帮我全面审查这个项目有没有 bug 和安全隐患",
+    "en": "Audit this project thoroughly for bugs and security risks"
+  },
+  "plugin": "security-audit-team",
+  "tags": [
+    {
+      "en": "Security Audit",
+      "zh": "安全审计"
+    },
+    {
+      "en": "Code Review",
+      "zh": "代码审查"
+    },
+    {
+      "en": "Graded Remediation",
+      "zh": "分级整改"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "en": "Audit this project thoroughly for bugs and security risks",
+      "zh": "帮我全面审查这个项目有没有 bug 和安全隐患"
+    },
+    {
+      "en": "Run a pre-launch security check for my project",
+      "zh": "上线前帮我做一次安全体检"
+    },
+    {
+      "en": "Review my payment and callback logic for vulnerabilities",
+      "zh": "审查我的支付和回调逻辑有没有漏洞"
+    }
+  ],
+  "members": [
+    {
+      "id": "security-audit-lead",
+      "name": {
+        "en": "Wade",
+        "zh": "卫衡"
+      },
+      "profession": {
+        "en": "Audit Lead",
+        "zh": "审查主理人"
+      },
+      "avatar": "avatars/team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "backend-auditor",
+      "name": {
+        "en": "Howard",
+        "zh": "侯深"
+      },
+      "profession": {
+        "en": "Backend Auditor",
+        "zh": "后端审查师"
+      },
+      "avatar": "avatars/backend-auditor.png",
+      "role": "member"
+    },
+    {
+      "id": "frontend-auditor",
+      "name": {
+        "en": "Frank",
+        "zh": "范澈"
+      },
+      "profession": {
+        "en": "Frontend Auditor",
+        "zh": "前端审查师"
+      },
+      "avatar": "avatars/frontend-auditor.png",
+      "role": "member"
+    },
+    {
+      "id": "infra-auditor",
+      "name": {
+        "en": "Gene",
+        "zh": "季垒"
+      },
+      "profession": {
+        "en": "Infrastructure Auditor",
+        "zh": "基础设施审查师"
+      },
+      "avatar": "avatars/infra-auditor.png",
+      "role": "member"
+    }
+  ]
+}

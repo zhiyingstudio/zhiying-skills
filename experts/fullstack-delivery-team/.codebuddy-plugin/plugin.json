@@ -1,0 +1,155 @@
+{
+  "name": "fullstack-delivery-team",
+  "version": "1.0.1",
+  "description": "A five-role software delivery team covering requirement decomposition, frontend, backend, QA and deployment, producing shippable artifacts and a go-live checklist",
+  "author": {
+    "name": "宫帅（AI智库）"
+  },
+  "agents": [
+    "./agents/delivery-team-lead.md",
+    "./agents/product-architect.md",
+    "./agents/frontend-engineer.md",
+    "./agents/backend-engineer.md",
+    "./agents/qa-engineer.md",
+    "./agents/deploy-engineer.md"
+  ],
+  "expertType": "team",
+  "agentName": "delivery-team-lead",
+  "teamInfo": {
+    "leadAgent": "delivery-team-lead",
+    "memberAgents": [
+      "product-architect",
+      "frontend-engineer",
+      "backend-engineer",
+      "qa-engineer",
+      "deploy-engineer"
+    ]
+  },
+  "displayName": {
+    "en": "Full-stack Delivery Team",
+    "zh": "全栈交付团队"
+  },
+  "profession": {
+    "en": "Full-stack Delivery Team",
+    "zh": "全栈交付团队"
+  },
+  "displayDescription": {
+    "en": "Five roles collaborate across four phases - requirement decomposition, parallel frontend and backend development, quality verification and deployment - delivering runnable code, test reports and a go-live checklist",
+    "zh": "五位角色分四阶段协作：需求拆解、前后端并行开发、质量验证、部署上线，交付可运行代码与测试报告。"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "02-Engineering",
+  "defaultInitPrompt": {
+    "zh": "我要做一个小工具，帮我走一遍从需求到上线的完整流程",
+    "en": "I want to build a small tool - walk me through the full flow from requirements to launch"
+  },
+  "plugin": "fullstack-delivery-team",
+  "tags": [
+    {
+      "en": "Full-stack Dev",
+      "zh": "全栈开发"
+    },
+    {
+      "en": "Multi-role Delivery",
+      "zh": "多角色交付"
+    },
+    {
+      "en": "Quality Gate",
+      "zh": "质量把关"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "en": "I want to build a small tool - walk me through the full flow from requirements to launch",
+      "zh": "我要做一个小工具，帮我走一遍从需求到上线的完整流程"
+    },
+    {
+      "en": "Turn this requirement into a technical solution and task breakdown",
+      "zh": "把这个需求拆成技术方案和任务清单"
+    },
+    {
+      "en": "Review my code for bugs and security issues",
+      "zh": "帮我审查代码里的缺陷和安全问题"
+    }
+  ],
+  "members": [
+    {
+      "id": "delivery-team-lead",
+      "name": {
+        "en": "Chief",
+        "zh": "程知远"
+      },
+      "profession": {
+        "en": "Delivery Lead",
+        "zh": "交付主理人"
+      },
+      "avatar": "avatars/team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "product-architect",
+      "name": {
+        "en": "Rex",
+        "zh": "任析"
+      },
+      "profession": {
+        "en": "Product Architect",
+        "zh": "产品架构师"
+      },
+      "avatar": "avatars/product-architect.png",
+      "role": "member"
+    },
+    {
+      "id": "frontend-engineer",
+      "name": {
+        "en": "Faye",
+        "zh": "方砚"
+      },
+      "profession": {
+        "en": "Frontend Engineer",
+        "zh": "前端工程师"
+      },
+      "avatar": "avatars/frontend-engineer.png",
+      "role": "member"
+    },
+    {
+      "id": "backend-engineer",
+      "name": {
+        "en": "Buck",
+        "zh": "白客"
+      },
+      "profession": {
+        "en": "Backend Engineer",
+        "zh": "后端工程师"
+      },
+      "avatar": "avatars/backend-engineer.png",
+      "role": "member"
+    },
+    {
+      "id": "qa-engineer",
+      "name": {
+        "en": "Quinn",
+        "zh": "秦戈"
+      },
+      "profession": {
+        "en": "QA Engineer",
+        "zh": "测试工程师"
+      },
+      "avatar": "avatars/qa-engineer.png",
+      "role": "member"
+    },
+    {
+      "id": "deploy-engineer",
+      "name": {
+        "en": "Docker",
+        "zh": "狄云"
+      },
+      "profession": {
+        "en": "Deployment Engineer",
+        "zh": "部署工程师"
+      },
+      "avatar": "avatars/deploy-engineer.png",
+      "role": "member"
+    }
+  ]
+}

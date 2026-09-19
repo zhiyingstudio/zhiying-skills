@@ -1,0 +1,13 @@
+{
+  "agent": "delivery-team-lead",
+  "leadAgent": "delivery-team-lead",
+  "teamName": {
+    "en": "Full-stack Delivery Team",
+    "zh": "全栈交付团队"
+  },
+  "description": {
+    "en": "Orchestrates requirement decomposition, parallel development, QA verification and deployment",
+    "zh": "编排需求拆解、并行开发、质量验证与部署上线四个阶段"
+  },
+  "maxTurns": 200
+}

@@ -1,0 +1,140 @@
+{
+  "name": "content-pipeline-team",
+  "version": "1.0.1",
+  "description": "A four-role content production team that moves one topic through topic mining, long-form drafting, multi-platform adaptation and visual packaging, delivering ready-to-publish content across text and image platforms",
+  "author": {
+    "name": "宫帅（AI智库）"
+  },
+  "agents": [
+    "./agents/content-team-lead.md",
+    "./agents/topic-scout.md",
+    "./agents/longform-writer.md",
+    "./agents/platform-adapter.md",
+    "./agents/visual-packager.md"
+  ],
+  "expertType": "team",
+  "agentName": "content-team-lead",
+  "teamInfo": {
+    "leadAgent": "content-team-lead",
+    "memberAgents": [
+      "topic-scout",
+      "longform-writer",
+      "platform-adapter",
+      "visual-packager"
+    ]
+  },
+  "displayName": {
+    "en": "Content Production Pipeline",
+    "zh": "内容生产流水线"
+  },
+  "profession": {
+    "en": "Content Production Team",
+    "zh": "内容生产团队"
+  },
+  "displayDescription": {
+    "en": "Four roles run one topic through topic mining, long-form drafting, multi-platform adaptation and visual packaging, delivering publishable copy plus visual plans",
+    "zh": "四位角色把选题推进到可发布：选题挖掘、长文撰写、多平台改写、视觉包装，一次生产多端分发。"
+  },
+  "avatar": "avatars/team.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "我有个主题，帮我一口气做成多平台可发布的内容",
+    "en": "I have a topic - turn it into publishable content for multiple platforms in one pass"
+  },
+  "plugin": "content-pipeline-team",
+  "tags": [
+    {
+      "en": "Content Pipeline",
+      "zh": "内容流水线"
+    },
+    {
+      "en": "Multi-platform",
+      "zh": "多平台分发"
+    },
+    {
+      "en": "Team Collaboration",
+      "zh": "团队协作"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "en": "I have a topic - turn it into publishable content for multiple platforms in one pass",
+      "zh": "我有个主题，帮我一口气做成多平台可发布的内容"
+    },
+    {
+      "en": "Dig out the angles in this topic that are actually worth writing",
+      "zh": "帮我挖一下这个主题里真正值得写的角度"
+    },
+    {
+      "en": "Adapt this article for Xiaohongshu, Douyin and WeChat",
+      "zh": "把这篇文章改成小红书、抖音和公众号三个版本"
+    }
+  ],
+  "members": [
+    {
+      "id": "content-team-lead",
+      "name": {
+        "en": "Chief",
+        "zh": "文知远"
+      },
+      "profession": {
+        "en": "Content Lead",
+        "zh": "内容主理人"
+      },
+      "avatar": "avatars/team-lead.png",
+      "role": "lead"
+    },
+    {
+      "id": "topic-scout",
+      "name": {
+        "en": "Remy",
+        "zh": "任觅"
+      },
+      "profession": {
+        "en": "Topic Scout",
+        "zh": "选题侦察员"
+      },
+      "avatar": "avatars/topic-scout.png",
+      "role": "member"
+    },
+    {
+      "id": "longform-writer",
+      "name": {
+        "en": "Mo",
+        "zh": "墨行"
+      },
+      "profession": {
+        "en": "Long-form Writer",
+        "zh": "长文撰稿人"
+      },
+      "avatar": "avatars/longform-writer.png",
+      "role": "member"
+    },
+    {
+      "id": "platform-adapter",
+      "name": {
+        "en": "Ada",
+        "zh": "安适"
+      },
+      "profession": {
+        "en": "Platform Adapter",
+        "zh": "多平台改写师"
+      },
+      "avatar": "avatars/platform-adapter.png",
+      "role": "member"
+    },
+    {
+      "id": "visual-packager",
+      "name": {
+        "en": "Vera",
+        "zh": "卫图"
+      },
+      "profession": {
+        "en": "Visual Packager",
+        "zh": "视觉包装师"
+      },
+      "avatar": "avatars/visual-packager.png",
+      "role": "member"
+    }
+  ]
+}

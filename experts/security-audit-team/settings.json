@@ -1,0 +1,13 @@
+{
+  "agent": "security-audit-lead",
+  "leadAgent": "security-audit-lead",
+  "teamName": {
+    "en": "Security Audit Team",
+    "zh": "安全审查专家团"
+  },
+  "description": {
+    "en": "Orchestrates parallel backend, frontend and infrastructure audits with independent P0 reproduction and graded remediation",
+    "zh": "编排后端、前端、基础设施三域并行审查，独立复现 P0 并产出分级整改清单"
+  },
+  "maxTurns": 200
+}

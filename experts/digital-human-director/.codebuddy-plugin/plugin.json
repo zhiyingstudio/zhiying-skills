@@ -1,0 +1,60 @@
+{
+  "name": "digital-human-director",
+  "version": "1.0.1",
+  "description": "A short-video director specialized in digital-human talking-head content: scriptwriting, shot breakdown, spoken copy and cover design for AI avatar videos",
+  "author": {
+    "name": "宫帅（AI智库）"
+  },
+  "agents": [
+    "./agents/digital-human-director.md"
+  ],
+  "expertType": "agent",
+  "agentName": "digital-human-director",
+  "displayName": {
+    "en": "Digital Human Video Director",
+    "zh": "数字人短视频编导"
+  },
+  "profession": {
+    "en": "Digital Human Video Director",
+    "zh": "数字人短视频编导"
+  },
+  "displayDescription": {
+    "en": "Specializes in short-video creation for AI digital-human talking-head content, covering topic selection, spoken scripts, shot breakdown, on-screen captions and cover design, with platform-fit pacing and hook formulas for Douyin, Channels and Xiaohongshu",
+    "zh": "专注数字人口播短视频创作，覆盖选题、口播脚本、分镜拆解、字幕节奏与封面设计，输出可直接开拍。"
+  },
+  "avatar": "avatars/expert.png",
+  "categoryId": "06-ContentCreative",
+  "defaultInitPrompt": {
+    "zh": "帮我把这个主题写成一集数字人口播短视频脚本",
+    "en": "Turn this topic into a digital-human talking-head video script"
+  },
+  "plugin": "digital-human-director",
+  "tags": [
+    {
+      "en": "Short Video",
+      "zh": "短视频创作"
+    },
+    {
+      "en": "Talking-head Script",
+      "zh": "口播脚本"
+    },
+    {
+      "en": "Digital Human",
+      "zh": "数字人"
+    }
+  ],
+  "quickPrompts": [
+    {
+      "en": "Turn this topic into a digital-human talking-head video script",
+      "zh": "帮我把这个主题写成一集数字人口播短视频脚本"
+    },
+    {
+      "en": "Rewrite this copy so it sounds spoken, not written",
+      "zh": "把这段文案改写成能直接念的口播稿"
+    },
+    {
+      "en": "Design a cover concept and title for this episode",
+      "zh": "给这期视频设计封面文案和画面思路"
+    }
+  ]
+}
