@@ -86,6 +86,7 @@ cp -R zhiying-skills/skills/zhiying-resume-optimizer ~/.agents/skills/
 ## 🔗 相关链接
 
 - 作者主页：[github.com/zhiyingstudio](https://github.com/zhiyingstudio)
+- 个人官网：https://gongshuai.me
 - AI智库官网：https://ai-zhiku.com
 
 ## 📄 License
