@@ -79,6 +79,21 @@ cp -R zhiying-skills/skills/zhiying-resume-optimizer ~/.agents/skills/
 # WorkBuddy：推荐市场搜索技能名一键安装
 ```
 
+## 💼 商业合作
+
+这些技能都是真实项目的沉淀。如果你需要**针对自己业务的定制开发**，或者希望**系统学习 AI Agent 落地**：
+
+| 服务 | 说明 |
+| --- | --- |
+| 🛠 **企业 Agent 定制** | 把团队里最耗时的重复工作做成可复用技能，含部署与培训 |
+| 🚀 **AI 应用开发** | 从 0 到 1 交付 AI 产品（桌面端 / Web / 小程序） |
+| 🎓 **企业内训** | AI 工具落地工作坊，按团队业务定制 |
+| 💬 **一对一咨询** | Agent 选型、方案评审、产品化路径 |
+
+**详细服务说明与合作方式 → [CONTACT.md](CONTACT.md)**
+
+📮 联系：个人官网 [gongshuai.me](https://gongshuai.me) · 邮箱 411575@qq.com
+
 ## 💎 付费技能
 
 另有 7 个付费技能在 SkillHub 市场上架（高情商回复、塔罗解读、小红书文案、旅行规划、紫微解读、视频脚本、起名大师），源码即商品本体，不在本仓库。欢迎到 [skillhub.cn](https://skillhub.cn) 搜索「zhiying」支持。
