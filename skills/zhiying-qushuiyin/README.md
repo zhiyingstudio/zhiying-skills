@@ -2,6 +2,8 @@
 
 > 通过免费通道生成无水印图片，无需 API Key，支持 flux/turbo 双模型，可指定尺寸与种子，画质可商用。
 
+![效果预览](./preview.jpg)
+
 `内容创作` `v1.0.1` `Agent Skills 标准` `MIT`
 
 ## 📥 安装
