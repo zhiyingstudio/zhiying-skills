@@ -445,3 +445,12 @@ url = API + urllib.parse.quote(path, safe="/?=&")
 - [ ] 孤儿组件处置已按六项实证核对（废弃标记 / 路由挂载 / 生产开关 / 字段出处 / 现役页面重叠 / 路径比对）
 - [ ] 所有空态的 `action` 都指向**真实存在的入口**（无「功能断链」）
 - [ ] 所有 `<Navigate to=` 兼容路径的目标页**真的有该功能**
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-partial-coverage-consistency/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

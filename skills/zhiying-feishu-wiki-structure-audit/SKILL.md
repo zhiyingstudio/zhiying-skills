@@ -62,3 +62,12 @@ Python 脚本模式（随包 `scripts/inventory_wiki.py`，参数化用法见脚
 4. **首页节点 ≠ 空间根级**：知识空间常以首页文档为目录树根，一级板块挂在首页节点下。BFS 要从首页节点开始；重建一级板块必须 `--parent-node-token <首页token>`，用 `--space-id`（不传 parent）会建到空间根级、脱离目录树（踩过：回滚时各路大神建错位置，BFS 少了 59 个节点的假象）
 5. **审查≠重构授权**：报告里把"空板块"列为问题时，先问清是否为用户预留（宫帅案例：空板块是他打算自己填的，媒体场景分区是他的偏好，合并双轨被要求回滚）。结构调整方案必须逐项确认后再动
 
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-feishu-wiki-structure-audit/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

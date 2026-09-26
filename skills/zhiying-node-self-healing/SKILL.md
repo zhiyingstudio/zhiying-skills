@@ -111,3 +111,12 @@ schtasks /run /tn node-recyclerd
 - 先给一句话结论：节点现在能扛多久、崩溃后多久自愈、瓶颈在哪
 - 基线表 + 参数表 + 部署命令，让运维能独立复现
 - 明确标注「改不了上游」的边界：哪些限制是推理库的，哪些是自己架构的
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-node-self-healing/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

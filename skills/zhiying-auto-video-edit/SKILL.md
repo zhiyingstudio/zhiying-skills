@@ -259,3 +259,12 @@ python auto_cut.py pipeline input.mp4 --config pipeline.json
 - **临时文件**：cut/concat 合并时在系统临时目录创建中间文件，完成后自动清理。
 - **输出命名**：未指定 `-o` 时自动生成，规则为 `{原名}_{后缀}.mp4`，如 `input_nosilence.mp4`、`input_cut_001.mp4`。
 - **长视频性能**：场景检测和 Whisper 对长视频（>1小时）耗时较长。建议先截取片段再处理。preset 用 `fast` 或 `ultrafast` 加速编码。
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-auto-video-edit/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

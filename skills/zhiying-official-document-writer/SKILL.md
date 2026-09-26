@@ -248,3 +248,12 @@ YYYY 年 MM 月 DD 日
 
 - `references/genre-templates.md` — 各文种完整模板
 - `references/style-rules.md` — 公文语言规范与常见错误对照
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-official-document-writer/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

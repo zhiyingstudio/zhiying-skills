@@ -360,3 +360,12 @@ Tab：全部(N) / 待支付(N) / 已支付(N) / 支付失败(N) / 支付中(N) /
 - **`.el-dialog__wrapper` 有 47 个实例**，多数是隐藏的；`display:block` 不代表真的在等交互，Vue 的 `visible` 可能已 false
 - **`el-dialog__close` 点击无效** + Vue 链上只有 `transition` 组件 = 僵尸节点，**重载页面即可清除**
 - **编辑器读到的「请检查填写内容的完整性」** 很可能是 3.5 分钟前的 DOM 残留
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-cnipa-patent-efiling/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

@@ -58,3 +58,12 @@ node-get 源节点拿标题 → docs +fetch 抓正文 XML → clean_content 清�
 7. 图片计数口径：清洗器在剔除 sub-page-list/cite 前统计 imgs，含被剔除块内的图——验证时 imgs_verified < imgs_planned 少几张属正常，不是丢图
 8. 双轨路由：系统性教程/横评/工具课→编号板块；碎片化玩法/案例→媒介专区。采编前先查目标库是否已有同主题文档（用户原有内容优先，避免近重复）
 9. **封面**：`docs +resource-update --doc <url> --type cover --file <rel_path>` 设封面；首图用 `docs +media-download --token <src> --output <rel_path>` 下载到相对路径再上传；`--file/--output` 禁止绝对路径（lark-shared）；img block id ≠ file_token（要 `src` 属性值，例 `K6tAboN1Go0wDex4WTQcYbyhn8f`，而 block id `PwyfdxHefogAgOxoZFScQ8Pjn1f` 不能用于 download）
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-feishu-wiki-collect/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

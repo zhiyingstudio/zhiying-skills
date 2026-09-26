@@ -241,3 +241,12 @@ agent-browser screenshot /tmp/verify.png
 ## 来源经验
 
 本技能沉淀自某 Next.js 命理站点项目实战：用户报「点击导航特别卡」，实测定位为 Next.js 视口 prefetch 盲区（滚动区外导航项首次点击 422ms 无反馈）并修复至 22-26ms；随后用户澄清「其实是鼠标移到左侧导航上缓慢」——第二轮定位为 `filter: drop-shadow` 逐帧动画（BaguaCursor 光标太极 + 侧栏 logo hover 动画）叠加首页 7 处常驻滤镜/阴影动画，全量改写为「静态化 + opacity 呼吸」后消除。
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-frontend-jank-diagnosis/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

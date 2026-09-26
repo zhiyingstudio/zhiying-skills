@@ -85,3 +85,12 @@ git tag --sort=-creatordate | head -5
 - 给上级：结论先行（整体绿灯/黄灯/红灯 + 一句话原因），细节附后
 - 给团队：风险段放最前，完成段放最后（先解决事，再记功）
 - 给自己存档：原始证据（commit 列表）附在周报末尾，三个月后回溯有据可查
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-weekly-report/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

@@ -133,3 +133,12 @@ ssh ... "cat /www/server/panel/vhost/nginx/<域名>.conf"
 - 先给「一句话结论」+ 表格化的数量统计（P0/P1/P2/P3 各几条）
 - 明确区分：**已修复并验证** / **待你决策** / **已排期**
 - 误报要主动说明（体现审查严谨性，而非掩盖）
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-fullstack-security-audit/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

@@ -344,3 +344,12 @@ for node in ast.walk(tree):
 
 测试基线：448 → 464 passed
 ```
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-mutation-test-verification/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

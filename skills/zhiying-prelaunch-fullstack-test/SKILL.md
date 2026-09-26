@@ -116,3 +116,12 @@ crontab -l | grep -E "backup|healthcheck"
 
 - `references/report-template.md` — 缺陷报告与最终报告模板
 - `references/subagent-prompt-template.md` — 子代理 prompt 自包含模板
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-prelaunch-fullstack-test/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

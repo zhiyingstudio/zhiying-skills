@@ -239,3 +239,12 @@ token = create_access_token(subject=user_id, token_version=tv)
 
 **最忌讳的一句汇报**：「接口正常返回 200，字段都有值」——
 字段有值恰恰可能是最严重的问题。
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-data-honesty-audit/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

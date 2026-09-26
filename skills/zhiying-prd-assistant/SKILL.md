@@ -95,3 +95,12 @@ PRD 的价值不在「写了」，而在**把开发会反问的问题提前答�
 输出 PRD 时固定结构：背景问题 → 目标非目标 → 用户故事 → 功能清单(MoSCoW) → 边界异常 → 埋点指标 → 开放问题（必须少于 5 条，每条带建议方案）。
 
 **开放问题不能没有**——全写完还一个疑问都没有的 PRD，多半是漏想了，不是想全了。
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-prd-assistant/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

@@ -146,3 +146,12 @@ allowed-tools: Read, Write, Edit, Glob, Grep
 
 - `references/storyline-patterns.md` — 常见叙事结构与适用场景
 - `references/wording-rules.md` — 标题与要点的措辞规则与反例
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/ppt-content-designer/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*

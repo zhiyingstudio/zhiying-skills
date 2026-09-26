@@ -153,3 +153,12 @@ allowed-tools: Read, Write, Edit, Glob
 
 - `references/rewrite-formulas.md` — 经历改写公式与行业动词库
 - `references/jd-matching.md` — 岗位匹配分析与关键词策略
+
+
+---
+
+## 效果预览
+
+![效果预览](https://raw.githubusercontent.com/zhiyingstudio/zhiying-skills/main/skills/zhiying-resume-optimizer/preview.jpg)
+
+*上图为本技能的效果预览：真实界面演示或能力概览卡。安装后按 SKILL.md 指引即可复现同等效果。*
