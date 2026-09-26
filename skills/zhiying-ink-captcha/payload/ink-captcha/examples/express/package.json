@@ -1,0 +1,12 @@
+{
+  "name": "ink-captcha-example-express",
+  "private": true,
+  "type": "module",
+  "description": "ink-captcha 的 Express 接入示例",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

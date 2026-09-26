@@ -1,0 +1,20 @@
+{
+  "name": "ink-captcha-example-nextjs",
+  "private": true,
+  "version": "0.1.0",
+  "description": "ink-captcha 的 Next.js App Router 接入示例",
+  "scripts": {
+    "dev": "next dev -p 3739",
+    "build": "next build",
+    "start": "next start -p 3739"
+  },
+  "dependencies": {
+    "ink-captcha": "file:../..",
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "server-only": "^0.0.1"
+  }
+}

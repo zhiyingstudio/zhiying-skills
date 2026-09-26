@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ink-captcha · 纯 Node 示例</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle at 50% 20%, #1a2430, #0b0f14 70%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: #e6edf3; padding: 24px;
+  }
+  .panel {
+    width: 100%; max-width: 400px; background: rgba(20,28,36,.86);
+    border: 1px solid rgba(255,255,255,.09); border-radius: 18px; padding: 26px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.5);
+  }
+  h1 { margin: 0 0 4px; font-size: 19px; font-weight: 600; letter-spacing: .01em; }
+  .sub { margin: 0 0 22px; font-size: 12px; color: rgba(255,255,255,.42); line-height: 1.6; }
+  .sub code { background: rgba(255,255,255,.07); padding: 1px 5px; border-radius: 4px; font-size: 11px; }
+  label { display: block; font-size: 12px; color: rgba(255,255,255,.55); margin-bottom: 6px; }
+  input {
+    width: 100%; padding: 10px 12px; margin-bottom: 18px; border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.28);
+    color: #e6edf3; font-size: 14px; outline: none; transition: border-color .2s;
+  }
+  input:focus { border-color: rgba(232,190,110,.55); }
+  #box { margin-bottom: 18px; }
+  button[type=submit] {
+    width: 100%; padding: 11px; border: 0; border-radius: 10px; font-size: 14px; font-weight: 600;
+    background: linear-gradient(135deg, #c9a25a, #e8be6e); color: #221a0c;
+    cursor: pointer; transition: opacity .2s, transform .1s;
+  }
+  button[type=submit]:disabled { opacity: .38; cursor: not-allowed; }
+  button[type=submit]:not(:disabled):active { transform: scale(.985); }
+  #msg { margin-top: 14px; font-size: 13px; min-height: 20px; text-align: center; line-height: 1.5; }
+  .ok { color: #4ade80; } .err { color: #f87171; }
+  .foot { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.07);
+          font-size: 11px; color: rgba(255,255,255,.32); line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="panel">
+  <h1>注册（示例）</h1>
+  <p class="sub">
+    纯 <code>node:http</code> 实现，零框架零依赖。<br>
+    验证通过后才允许提交 —— 由一次性凭证把关。
+  </p>
+
+  <label for="account">账号</label>
+  <input id="account" type="text" placeholder="随便填，示例不会真的注册" autocomplete="off">
+
+  <!-- 组件自动挂载：只要这个 div 存在，脚本会自己找到它 -->
+  <div id="box" data-ink-captcha></div>
+
+  <button type="submit" id="submitBtn" disabled>提交注册</button>
+  <div id="msg"></div>
+
+  <div class="foot">
+    验证流程：GET 挑战 → 按顺序点字 → POST 校验 → 拿一次性凭证 → 提交业务接口消费凭证
+  </div>
+</div>
+
+<script src="/ink-captcha.js"></script>
+<script>
+  var token = null;
+  var btn = document.getElementById("submitBtn");
+  var msg = document.getElementById("msg");
+
+  // 命令式挂载（也可以用 data-ink-captcha 自动挂载 + data-callback）
+  var inst = InkCaptcha.mount(document.getElementById("box"), {
+    endpoint: "/api/captcha/points",
+    verifyEndpoint: "/api/captcha/points/verify",
+    onVerified: function (passToken) {
+      token = passToken;
+      btn.disabled = false;
+      msg.textContent = "";
+      msg.className = "";
+    },
+    onStateChange: function (s) {
+      btn.disabled = !s.verified;
+      if (!s.verified) token = null;
+    },
+  });
+
+  btn.addEventListener("click", function () {
+    btn.disabled = true;
+    msg.textContent = "提交中…";
+    msg.className = "";
+
+    fetch("/api/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        account: document.getElementById("account").value || "匿名",
+        passToken: token,
+      }),
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (json) {
+        if (json.success) {
+          msg.textContent = json.data.message;
+          msg.className = "ok";
+          // 凭证已被消费，重置验证码
+          inst.reset();
+          token = null;
+          btn.disabled = true;
+        } else {
+          msg.textContent = json.error || "提交失败";
+          msg.className = "err";
+          inst.reset();
+          token = null;
+        }
+      })
+      .catch(function () {
+        msg.textContent = "网络异常";
+        msg.className = "err";
+        inst.reset();
+        token = null;
+      });
+  });
+</script>
+</body>
+</html>

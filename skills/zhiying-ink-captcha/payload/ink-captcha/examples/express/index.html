@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ink-captcha · 在线演示</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(circle at 50% 15%, #1a2430, #0b0f14 72%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: #e6edf3; padding: 24px;
+  }
+  .panel {
+    width: 100%; max-width: 400px; background: rgba(20,28,36,.86);
+    border: 1px solid rgba(255,255,255,.09); border-radius: 18px; padding: 26px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.5);
+  }
+  h1 { margin: 0 0 4px; font-size: 19px; font-weight: 600; }
+  .sub { margin: 0 0 22px; font-size: 12px; color: rgba(255,255,255,.42); line-height: 1.65; }
+  .sub code { background: rgba(255,255,255,.07); padding: 1px 5px; border-radius: 4px; font-size: 11px; }
+  label { display: block; font-size: 12px; color: rgba(255,255,255,.55); margin-bottom: 6px; }
+  input {
+    width: 100%; padding: 10px 12px; margin-bottom: 18px; border-radius: 10px;
+    border: 1px solid rgba(255,255,255,.12); background: rgba(0,0,0,.28);
+    color: #e6edf3; font-size: 14px; outline: none; transition: border-color .2s;
+  }
+  input:focus { border-color: rgba(232,190,110,.55); }
+  #box { margin-bottom: 18px; }
+  button[type=submit] {
+    width: 100%; padding: 11px; border: 0; border-radius: 10px; font-size: 14px; font-weight: 600;
+    background: linear-gradient(135deg, #c9a25a, #e8be6e); color: #221a0c;
+    cursor: pointer; transition: opacity .2s, transform .1s;
+  }
+  button[type=submit]:disabled { opacity: .38; cursor: not-allowed; }
+  button[type=submit]:not(:disabled):active { transform: scale(.985); }
+  #msg { margin-top: 14px; font-size: 13px; min-height: 20px; text-align: center; line-height: 1.5; }
+  .ok { color: #4ade80; } .err { color: #f87171; }
+  .foot { margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.07);
+          font-size: 11px; color: rgba(255,255,255,.32); line-height: 1.8; }
+  .foot b { color: rgba(255,255,255,.5); font-weight: 500; }
+  .togglerow { display: flex; gap: 8px; margin-bottom: 18px; }
+  .togglerow button {
+    flex: 1; padding: 7px; font-size: 12px; border-radius: 8px; cursor: pointer;
+    border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04);
+    color: rgba(255,255,255,.6); transition: all .2s; font-family: inherit;
+  }
+  .togglerow button.on { border-color: rgba(232,190,110,.5); background: rgba(232,190,110,.12); color: #e8be6e; }
+</style>
+</head>
+<body>
+<div class="panel">
+  <h1>注册（示例）</h1>
+  <p class="sub">
+    服务端核心零依赖，前端零框架。<br>
+    验证通过后才能提交 —— 由<b>一次性凭证</b>把关。
+  </p>
+
+  <label for="account">账号</label>
+  <input id="account" type="text" placeholder="随便填，示例不会真的注册" autocomplete="off">
+
+  <div class="togglerow">
+    <button type="button" id="tPaper" class="on">宣纸底图</button>
+    <button type="button" id="tDark">墨夜底图</button>
+  </div>
+
+  <!-- data-ink-captcha：脚本会自动找到并挂载 -->
+  <div id="box" data-ink-captcha></div>
+
+  <button type="submit" id="submitBtn" disabled>提交注册</button>
+  <div id="msg"></div>
+
+  <div class="foot">
+    <b>流程</b>：GET 挑战 → 按顺序点字 → POST 校验 → 拿一次性凭证 → 业务接口消费凭证<br>
+    <b>防重放</b>：凭证用后即删，同一凭证第二次提交必然失败
+  </div>
+</div>
+
+<script src="/ink-captcha.js"></script>
+<script>
+  var token = null;
+  var theme = "paper";
+  var btn = document.getElementById("submitBtn");
+  var msg = document.getElementById("msg");
+
+  var inst = InkCaptcha.mount(document.getElementById("box"), {
+    endpoint: "/api/captcha/points",
+    verifyEndpoint: "/api/captcha/points/verify",
+    onVerified: function (passToken) {
+      token = passToken;
+      btn.disabled = false;
+      msg.textContent = "";
+      msg.className = "";
+    },
+    onStateChange: function (s) {
+      btn.disabled = !s.verified;
+      if (!s.verified) token = null;
+    },
+  });
+
+  // 主题切换：改 query 参数重新拉挑战
+  function setTheme(t) {
+    theme = t;
+    document.getElementById("tPaper").className = t === "paper" ? "on" : "";
+    document.getElementById("tDark").className = t === "dark" ? "on" : "";
+    var el = document.getElementById("box");
+    // 重建实例以换主题
+    inst.destroy();
+    inst = InkCaptcha.mount(el, {
+      endpoint: "/api/captcha/points?theme=" + t,
+      verifyEndpoint: "/api/captcha/points/verify",
+      onVerified: function (pt) { token = pt; btn.disabled = false; },
+      onStateChange: function (s) { btn.disabled = !s.verified; if (!s.verified) token = null; },
+    });
+  }
+  document.getElementById("tPaper").onclick = function () { setTheme("paper"); };
+  document.getElementById("tDark").onclick = function () { setTheme("dark"); };
+
+  btn.addEventListener("click", function () {
+    btn.disabled = true;
+    msg.textContent = "提交中…";
+    msg.className = "";
+
+    fetch("/api/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        account: document.getElementById("account").value || "匿名",
+        passToken: token,
+      }),
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (json) {
+        if (json.success) {
+          msg.textContent = json.data.message;
+          msg.className = "ok";
+        } else {
+          msg.textContent = json.error || "提交失败";
+          msg.className = "err";
+        }
+        inst.reset();
+        token = null;
+      })
+      .catch(function () {
+        msg.textContent = "网络异常";
+        msg.className = "err";
+        inst.reset();
+        token = null;
+      });
+  });
+</script>
+</body>
+</html>

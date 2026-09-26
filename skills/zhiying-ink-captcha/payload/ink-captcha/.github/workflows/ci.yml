@@ -1,0 +1,101 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: 自测（Node ${{ matrix.node }}）
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ["18", "20", "22"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 设置 Node ${{ matrix.node }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: 语法检查
+        run: |
+          set -e
+          # 纯 JS / cjs / mjs：node --check 直接支持
+          for f in src/core.js src/ink-background.js src/rate-limit.js src/ink-captcha.js \
+                   src/index.js src/index.cjs scripts/*.mjs; do
+            echo "  check: $f"
+            node --check "$f"
+          done
+          # JSX 文件含 JSX 语法，node --check 不认；用 esbuild 之类会引入依赖，
+          # 这里改为「确认文件存在且非空」的轻量校验
+          echo "  check: src/react.jsx（JSX，跳过 node --check，仅确认非空）"
+          test -s src/react.jsx
+
+      - name: 核心自测（36 项）
+        run: node scripts/selftest.mjs
+
+      - name: 零依赖核验
+        run: |
+          echo "── 检查 dependencies 必须为空 ──"
+          node -e '
+            const p = require("./package.json");
+            const deps = Object.keys(p.dependencies || {});
+            if (deps.length > 0) {
+              console.error("❌ 本项目必须零依赖，但发现:", deps.join(", "));
+              process.exit(1);
+            }
+            console.log("✅ 零依赖确认");
+          '
+
+          echo "── 检查核心文件真实 import 只来自相对路径或 node: 内置模块 ──"
+          # 只看真实的 import/require 语句，排除注释行（注释里的用法示例含 "ink-captcha" 字样）
+          BAD=$(grep -nE '^\s*(import|export)\s.*from\s+["'"'"']|require\(\s*["'"'"']' \
+                  src/core.js src/ink-background.js src/rate-limit.js 2>/dev/null \
+                | grep -vE 'from\s+["'"'"'](\.|node:)|require\(\s*["'"'"'](\.|node:)' || true)
+          if [ -n "$BAD" ]; then
+            echo "❌ 核心文件出现了非内置依赖:"
+            echo "$BAD"
+            exit 1
+          fi
+          echo "✅ 核心仅依赖 node 内置模块与本地相对路径"
+
+      - name: 字段剥离检查
+        run: |
+          node -e '
+            import("./src/core.js").then((m) => {
+              const cap = m.createCaptcha({ secret: "ci-test-secret-0123456789abcdef" });
+              const ch = cap.createChallenge();
+              const s = JSON.stringify(ch);
+              const banned = ["isTarget", "_isTarget"];
+              for (const b of banned) {
+                if (s.includes(b)) {
+                  console.error("❌ 挑战响应体泄漏了字段:", b);
+                  process.exit(1);
+                }
+              }
+              console.log("✅ 无字段泄漏，chars 数量 =", ch.chars.length);
+            });
+          '
+
+  e2e:
+    name: 浏览器端到端
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: 安装 Playwright
+        run: |
+          npm i -D playwright@latest
+          npx playwright install --with-deps chromium
+
+      - name: 跑端到端
+        run: node scripts/browser-e2e.mjs

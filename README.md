@@ -6,7 +6,7 @@
 每一个技能都来自真实项目的实战沉淀，不是玩具 Demo。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/免费技能-19-brightgreen)](#-免费技能19-个)
+[![Skills](https://img.shields.io/badge/免费技能-20-brightgreen)](#-免费技能20-个)
 [![Experts](https://img.shields.io/badge/专家包-5-orange)](#-专家包5-个)
 [![Standard](https://img.shields.io/badge/标准-Agent%20Skills-blueviolet)](https://agentskills.io)
 
@@ -31,7 +31,7 @@
 >
 > 专家包（experts/）为 WorkBuddy 原生格式，但 `agents/` 下的角色 prompt 是通用 Markdown，可当作 system prompt 用于任何工具。
 
-## 📦 免费技能（19 个）
+## 📦 免费技能（20 个）
 
 | 技能 | 说明 |
 | --- | --- |
@@ -44,6 +44,7 @@
 | [zhiying-feishu-wiki-structure-audit](skills/zhiying-feishu-wiki-structure-audit) | 飞书知识库结构审查：节点树盘点、死链校验、重复与空板块识别 |
 | [zhiying-frontend-jank-diagnosis](skills/zhiying-frontend-jank-diagnosis) | 前端卡顿诊断：渲染管线、事件监听、布局抖动、内存泄漏逐层定位 |
 | [zhiying-fullstack-security-audit](skills/zhiying-fullstack-security-audit) | 已上线 Web 项目全栈安全与质量审查：并行子代理深挖 + 主代理独立复现 |
+| [zhiying-ink-captcha](skills/zhiying-ink-captcha) | 自研点选式人机验证：答案 AES-256-GCM 加密下发，零依赖无备案无费用 |
 | [zhiying-mutation-test-verification](skills/zhiying-mutation-test-verification) | 变异测试：验证测试用例是否真的能抓住缺陷，不做永远绿的摆设 |
 | [zhiying-node-self-healing](skills/zhiying-node-self-healing) | AI 推理服务节点（Gradio/Windows 常驻）稳定性加固与自愈运维 |
 | [zhiying-official-document-writer](skills/zhiying-official-document-writer) | 公文写作：通知、报告、请示、批复、纪要、讲话稿，自动匹配文种格式 |

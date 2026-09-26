@@ -1,0 +1,33 @@
+MIT License
+
+Copyright (c) 2026 宫帅（AI智库 · 智影科技）
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## 附：关于人机验证的合规提醒
+
+本软件是**技术组件**，用于区分人类与自动化程序。
+
+在中国大陆地区，若你的业务涉及《互联网用户账号信息管理规定》等法规下的
+用户注册场景，请自行评估是否需要叠加其他合规措施。
+
+本软件**不收集、不上传任何用户数据**，所有校验都在你自己的服务器内存中完成，
+不使用任何第三方打码/验证服务。

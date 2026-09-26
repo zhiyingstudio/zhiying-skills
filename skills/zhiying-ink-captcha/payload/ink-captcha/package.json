@@ -1,0 +1,50 @@
+{
+  "name": "ink-captcha",
+  "version": "1.0.0",
+  "description": "自研点选式人机验证：服务端零依赖、前端框架无关、无备案无费用。国风水墨程序化底图，答案 AES-256-GCM 加密不下发。",
+  "type": "module",
+  "main": "./src/index.js",
+  "module": "./src/index.js",
+  "exports": {
+    ".": {
+      "import": "./src/index.js",
+      "require": "./src/index.cjs",
+      "default": "./src/index.js"
+    },
+    "./react": {
+      "import": "./src/react.jsx",
+      "default": "./src/react.jsx"
+    },
+    "./browser": "./src/ink-captcha.js",
+    "./client": "./src/ink-captcha.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "captcha",
+    "point-captcha",
+    "人机验证",
+    "验证码",
+    "click-captcha",
+    "self-hosted",
+    "no-dependency",
+    "chinese",
+    "ink-wash",
+    "anti-bot"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node scripts/selftest.mjs",
+    "test:online": "node scripts/verify-online.mjs"
+  },
+  "sideEffects": [
+    "./src/ink-captcha.js"
+  ]
+}
