@@ -6,7 +6,7 @@ description: "为任意网站接入自研点选式人机验证（注册/发短�
 description_zh: "自研点选式人机验证：答案顺序 AES-256-GCM 加密下发，服务端零依赖、前端零框架、无备案无费用，含三套可跑示例与 36 项自测。"
 description_en: "Self-hosted click-order CAPTCHA: answer sequence encrypted with AES-256-GCM, zero server deps, zero framework, no ICP filing and no fees, with 3 runnable examples and 36 self-tests."
 category: 安全工具
-version: 1.0.0
+version: 1.0.1
 author: 宫帅（AI智库）
 slug: zhiying-ink-captcha
 displayName: "墨韵点选验证码"
